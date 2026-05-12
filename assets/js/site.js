@@ -1,5 +1,5 @@
 const SUPPORT_EMAIL = "borogodoai@gmail.com";
-const FOOTER_TEXT = "© 2026 Borogodó";
+const FOOTER_TEXT = "© 2026 Marcos Curvello";
 
 document.querySelectorAll("[data-support-email]").forEach((element) => {
   element.textContent = SUPPORT_EMAIL;
