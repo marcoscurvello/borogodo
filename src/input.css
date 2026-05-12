@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-bg: #0a0a0a;
+  --color-app-surface: #1c1c1e;
+  --color-app-surface-2: #242427;
+  --color-app-border: #2d2d2d;
+  --color-app-text: #f2f2f2;
+  --color-app-text-secondary: #a3a3a3;
+  --color-app-primary: #26a98d;
+  --color-app-primary-soft: #5dcaaf;
+  --color-app-primary-deep: #12725f;
+  --color-app-secondary: #5cc9f9;
+  --color-app-pink: #ed537f;
+  --color-app-yellow: #ffdc5c;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-app-bg text-app-text antialiased;
+    background-image:
+      radial-gradient(circle at top center, rgb(38 169 141 / 0.14), transparent 26%),
+      radial-gradient(circle at 20% 18%, rgb(92 201 249 / 0.08), transparent 22%),
+      linear-gradient(180deg, #090909 0%, #0b0b0c 40%, #0d0d0e 100%);
+  }
+
+  ::selection {
+    background: rgb(92 201 249 / 0.28);
+  }
+
+  a,
+  button {
+    @apply transition duration-200 ease-out;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 py-6 sm:px-8 lg:px-10;
+  }
+
+  .hero-panel {
+    @apply relative overflow-hidden rounded-[1.75rem] border border-app-border bg-app-surface shadow-[0_30px_70px_-45px_rgba(0,0,0,0.85)];
+  }
+
+  .surface-card {
+    @apply rounded-[1.75rem] border border-app-border bg-app-surface/92 shadow-[0_30px_70px_-45px_rgba(0,0,0,0.85)] backdrop-blur-sm;
+  }
+
+  .primary-link {
+    @apply inline-flex items-center justify-center rounded-full bg-app-primary px-6 py-3.5 text-base font-bold tracking-[-0.02em] text-white shadow-[0_16px_34px_-22px_rgba(38,169,141,0.95)] hover:-translate-y-0.5 hover:bg-app-primary-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg;
+  }
+
+  .secondary-link {
+    @apply inline-flex items-center text-sm font-semibold text-app-text decoration-white/20 underline-offset-4 hover:text-app-primary-soft hover:decoration-app-primary-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg;
+  }
+
+  .feature-card {
+    @apply rounded-[1.6rem] border border-app-border bg-app-surface-2 p-5 shadow-[0_24px_50px_-38px_rgba(0,0,0,0.95)];
+  }
+
+  .faq-card {
+    @apply rounded-[1.45rem] border border-app-border bg-app-surface-2/95 p-5 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.9)];
+  }
+}
