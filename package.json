@@ -1,0 +1,14 @@
+{
+  "name": "borogodo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static GitHub Pages site for the Borogodo iOS app support URL.",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/styles.css",
+    "watch:css": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.7",
+    "tailwindcss": "^4.1.7"
+  }
+}
